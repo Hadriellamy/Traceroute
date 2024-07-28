@@ -18,7 +18,7 @@ defmodule TracerouteMonitor.TracerouteContext do
   def update_category(%Category{} = category, attrs) do
     category
     |> Category.changeset(attrs)\
-    
+
     |> Repo.update()
   end
 
