@@ -1,0 +1,17 @@
+<.header>
+  Host <%= @host.id %>
+  <:subtitle>This is a host record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/hosts/#{@host}/edit"}>
+      <.button>Edit host</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Name"><%= @host.name %></:item>
+  <:item title="Ip"><%= @host.ip %></:item>
+  <:item title="Address"><%= @host.address %></:item>
+</.list>
+
+<.back navigate={~p"/hosts"}>Back to hosts</.back>

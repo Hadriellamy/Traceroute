@@ -1,0 +1,33 @@
+<.header>
+  Listing Traceroutes hops
+  <:actions>
+    <.link href={~p"/traceroutes_hops/new"}>
+      <.button>New Traceroutes hop</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="traceroutes_hops" rows={@traceroutes_hops} row_click={&JS.navigate(~p"/traceroutes_hops/#{&1}")}>
+  <:col :let={traceroutes_hop} label="Host"><%= traceroutes_hop.host %></:col>
+  <:col :let={traceroutes_hop} label="Order"><%= traceroutes_hop.order %></:col>
+  <:col :let={traceroutes_hop} label="Loss"><%= traceroutes_hop.loss %></:col>
+  <:col :let={traceroutes_hop} label="Snt"><%= traceroutes_hop.snt %></:col>
+  <:col :let={traceroutes_hop} label="Avg"><%= traceroutes_hop.avg %></:col>
+  
+  
+
+
+  <:action :let={traceroutes_hop}>
+     <.link navigate={~p"/traceroutes_hops/#{traceroutes_hop}"}>Show</.link>
+  </:action>
+
+  <:action :let={traceroutes_hop}>
+    <.link navigate={~p"/traceroutes_hops/#{traceroutes_hop}/edit"}>Edit</.link>
+  </:action>
+
+  <:action :let={traceroutes_hop}>
+    <.link href={~p"/traceroutes_hops/#{traceroutes_hop}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

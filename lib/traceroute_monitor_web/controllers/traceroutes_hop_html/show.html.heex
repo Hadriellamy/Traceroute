@@ -1,0 +1,19 @@
+<.header>
+  Traceroutes hop <%= @traceroutes_hop.id %>
+  <:subtitle>This is a traceroutes_hop record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/traceroutes_hops/#{@traceroutes_hop}/edit"}>
+      <.button>Edit traceroutes_hop</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Order"><%= @traceroutes_hop.order %></:item>
+  <:item title="Host"><%= @traceroutes_hop.host %></:item>
+  <:item title="Loss"><%= @traceroutes_hop.loss %></:item>
+  <:item title="Snt"><%= @traceroutes_hop.snt %></:item>
+  <:item title="Avg"><%= @traceroutes_hop.avg %></:item>
+</.list>
+
+<.back navigate={~p"/traceroutes_hops"}>Back to traceroutes_hops</.back>

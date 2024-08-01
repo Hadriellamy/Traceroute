@@ -1,0 +1,29 @@
+<.header>
+  Listing Hosts
+  <:actions>
+    <.link href={~p"/hosts/new"}>
+      <.button>New Host</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="hosts" rows={@hosts} row_click={&JS.navigate(~p"/hosts/#{&1}")}>
+  <:col :let={host} label="Name"><%= host.name %></:col>
+  <:col :let={host} label="Ip"><%= host.ip %></:col>
+  <:col :let={host} label="Address"><%= host.address %></:col>
+
+  <:action :let={host}>
+   <.link navigate={~p"/hosts/#{host}"}>Show</.link>
+   </:action>
+
+   <:action :let={host}>
+    <.link navigate={~p"/hosts/#{host}/edit"}>Edit</.link>
+  </:action>
+
+  <:action :let={host}>
+    <.link href={~p"/hosts/#{host}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+  
+</.table>

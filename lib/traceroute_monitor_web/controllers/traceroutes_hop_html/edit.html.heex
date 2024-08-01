@@ -1,0 +1,8 @@
+<.header>
+  Edit Traceroutes hop <%= @traceroutes_hop.id %>
+  <:subtitle>Use this form to manage traceroutes_hop records in your database.</:subtitle>
+</.header>
+
+<.traceroutes_hop_form changeset={@changeset} action={~p"/traceroutes_hops/#{@traceroutes_hop}"} />
+
+<.back navigate={~p"/traceroutes_hops"}>Back to traceroutes_hops</.back>

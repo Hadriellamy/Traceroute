@@ -1,0 +1,14 @@
+<.header>
+  Traceroute <%= @traceroute.id %>
+  <:subtitle>This is a traceroute record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/traceroutes/#{@traceroute}/edit"}>
+      <.button>Edit traceroute</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+</.list>
+
+<.back navigate={~p"/traceroutes"}>Back to traceroutes</.back>

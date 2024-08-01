@@ -1,0 +1,34 @@
+<.header>
+  Listing Traceroutes
+  <:actions>
+    <.link href={~p"/traceroutes/new"}>
+      <.button>New Traceroute</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="traceroutes" rows={@traceroutes} row_click={&JS.navigate(~p"/traceroutes/#{&1}")}>
+  <:col :let={traceroute}>
+    <.link navigate={~p"/traceroutes/#{traceroute.id}"}>Show</.link>
+  </:col>
+  <:col :let={traceroute}>
+    <%= traceroute.host_id %>
+  </:col>
+  <:col :let={traceroute}>
+    <%= traceroute.inserted_at %>
+  </:col>
+  <:col :let={traceroute}>
+    <%= traceroute.updated_at %>
+  </:col>
+  <:action :let={traceroute}>
+    <div class="sr-only">
+      <.link navigate={~p"/traceroutes/#{traceroute.id}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/traceroutes/#{traceroute.id}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={traceroute}>
+    <.link href={~p"/traceroutes/#{traceroute.id}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

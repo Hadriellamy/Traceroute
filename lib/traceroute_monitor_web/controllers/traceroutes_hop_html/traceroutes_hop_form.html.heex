@@ -1,0 +1,13 @@
+<.simple_form :let={f} for={@changeset} action={@action}>
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+  <.input field={f[:order]} type="number" label="Order" />
+  <.input field={f[:host]} type="text" label="Host" />
+  <.input field={f[:loss]} type="number" label="Loss" step="any" />
+  <.input field={f[:snt]} type="number" label="Snt" />
+  <.input field={f[:avg]} type="number" label="Avg" step="any" />
+  <:actions>
+    <.button>Save Traceroutes hop</.button>
+  </:actions>
+</.simple_form>

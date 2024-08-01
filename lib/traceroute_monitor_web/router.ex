@@ -19,6 +19,10 @@ defmodule TracerouteMonitorWeb.Router do
 
     get "/", PageController, :home
     resources "/categories", CategoryController
+    resources "/hosts", HostController
+    resources "/traceroutes", TracerouteController
+    resources "/traceroutes_hops", TraceroutesHopController
+
 
   end
 
