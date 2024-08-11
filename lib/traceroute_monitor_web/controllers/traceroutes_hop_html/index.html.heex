@@ -7,7 +7,7 @@
   </:actions>
 </.header>
 
-<.table id="traceroutes_hops" rows={@traceroutes_hops} row_click={&JS.navigate(~p"/traceroutes_hops/#{&1}")}>
+<.table id="traceroutes_hops" rows={@traceroutes_hops} row_click={&JS.navigate(~p"/traceroutes_hops/#{&1}")}> 
   <:col :let={traceroutes_hop} label="Host"><%= traceroutes_hop.host %></:col>
   <:col :let={traceroutes_hop} label="Order"><%= traceroutes_hop.order %></:col>
   <:col :let={traceroutes_hop} label="Loss"><%= traceroutes_hop.loss %></:col>

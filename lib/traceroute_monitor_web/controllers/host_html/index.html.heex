@@ -9,8 +9,8 @@
 
 <.table id="hosts" rows={@hosts} row_click={&JS.navigate(~p"/hosts/#{&1}")}>
   <:col :let={host} label="Name"><%= host.name %></:col>
-  <:col :let={host} label="Ip"><%= host.ip %></:col>
-  <:col :let={host} label="Address"><%= host.address %></:col>
+  <:col :let={host} label="IP Address"><%= host.ip %></:col>
+  
 
   <:action :let={host}>
    <.link navigate={~p"/hosts/#{host}"}>Show</.link>
