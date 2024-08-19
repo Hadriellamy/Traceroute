@@ -8,6 +8,7 @@ defmodule TracerouteMonitor.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      TracerouteMonitor.Scheduler,
       TracerouteMonitorWeb.Telemetry,
       TracerouteMonitor.Repo,
       {DNSCluster, query: Application.get_env(:traceroute_monitor, :dns_cluster_query) || :ignore},
@@ -31,4 +32,5 @@ defmodule TracerouteMonitor.Application do
     TracerouteMonitorWeb.Endpoint.config_change(changed, removed)
     :ok
   end
+
 end

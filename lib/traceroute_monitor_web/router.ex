@@ -24,6 +24,7 @@ defmodule TracerouteMonitorWeb.Router do
     resources "/traceroutes_hops", TraceroutesHopController
 
 
+
   end
 
   # Other scopes may use custom stacks.

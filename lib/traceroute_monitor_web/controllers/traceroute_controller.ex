@@ -13,7 +13,7 @@ defmodule TracerouteMonitorWeb.TracerouteController do
     changeset = Traceroutes.change_traceroute(%Traceroute{})
     render(conn, :new, changeset: changeset)
   end
- 
+
   def create(conn, %{"traceroute" => traceroute_params}) do
     case Traceroutes.create_traceroute(traceroute_params) do
       {:ok, traceroute} ->

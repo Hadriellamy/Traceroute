@@ -1,4 +1,5 @@
 defmodule TracerouteMonitor.TracerouteContext do
+  require Logger
   import Ecto.Query, warn: false
   alias TracerouteMonitor.Repo
   alias TracerouteMonitor.{Category, Host, Traceroute, TracerouteHop}
@@ -115,4 +116,30 @@ defmodule TracerouteMonitor.TracerouteContext do
     end
   end
   defp compare_hops(_, _), do: true
+
+
+  def run_mtr do
+    Logger.info("Running MTR...")
+
+    hosts = get_all_hosts()
+
+    for host <- hosts do
+      case System.cmd("sudo", ["/opt/homebrew/sbin/mtr", "--report", host.ip]) do
+        {result, 0} ->
+          Logger.info("MTR successful for #{host.name}")
+
+        {error, _} ->
+          Logger.error("MTR failed for #{host.name}: #{error}")
+      end
+    end
+  end
+
+
+
+
+  def get_all_hosts do
+    Repo.all(Host)
+  end
+
+
 end

@@ -52,7 +52,6 @@ Traceroute Monitor is a tool designed to monitor network routes for various IP a
 ### Host
 - `name`: Host name
 - `ip`: Host IP address
-- `address`: Host address
 - `category_id`: Reference to the category
 
 ### Traceroute

@@ -54,7 +54,9 @@ defmodule TracerouteMonitor.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
-      {:bandit, "~> 1.5"}
+      {:bandit, "~> 1.5"},
+      {:quantum, "~> 3.4"},
+      {:timex, "~> 3.7"}
     ]
   end
 
@@ -79,4 +81,7 @@ defmodule TracerouteMonitor.MixProject do
       ]
     ]
   end
+
+
+
 end
